@@ -1,0 +1,126 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>AMD Prash App Store</title>  
+  <style>  
+    body {  
+      font-family: Arial, sans-serif;  
+      margin: 0;  
+      padding: 0;  
+      background: #f9f9f9;  
+    }  
+    header {  
+      background: #1a73e8;  
+      color: white;  
+      padding: 15px;  
+      text-align: center;  
+    }  
+    header img {  
+      height: 80px;  
+    }  
+    .search-bar {  
+      margin: 20px auto;  
+      max-width: 500px;  
+      display: flex;  
+    }  
+    .search-bar input {  
+      flex: 1;  
+      padding: 10px;  
+      border: 1px solid #ccc;  
+      border-radius: 8px 0 0 8px;  
+      outline: none;  
+    }  
+    .search-bar button {  
+      padding: 10px 15px;  
+      border: none;  
+      background: #1a73e8;  
+      color: white;  
+      border-radius: 0 8px 8px 0;  
+      cursor: pointer;  
+    }  
+    .app-grid {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  
+      gap: 20px;  
+      padding: 20px;  
+    }  
+    .app-card {  
+      background: white;  
+      border-radius: 12px;  
+      padding: 15px;  
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);  
+      text-align: center;  
+      transition: transform 0.2s;  
+    }  
+    .app-card:hover {  
+      transform: translateY(-5px);  
+    }  
+    .app-card img {  
+      width: 80px;  
+      height: 80px;  
+      border-radius: 16px;  
+    }  
+    .app-card h3 {  
+      margin: 10px 0 5px;  
+      font-size: 18px;  
+    }  
+    .app-card p {  
+      font-size: 14px;  
+      color: #555;  
+      height: 40px;  
+      overflow: hidden;  
+    }  
+    .rating {  
+      color: #ff9800;  
+      font-size: 14px;  
+    }  
+    .download-btn {  
+      display: inline-block;  
+      margin-top: 10px;  
+      padding: 8px 15px;  
+      background: #1a73e8;  
+      color: white;  
+      text-decoration: none;  
+      border-radius: 6px;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <img src="A_logo_for_AMD_Prash.png" alt="AMD Prash Logo">  
+  </header>    <div class="search-bar">  
+    <input type="text" id="searchInput" placeholder="Search apps...">  
+    <button onclick="searchApps()">Search</button>  
+  </div>    <div class="app-grid" id="appGrid">  
+    <!-- Example App 1 -->  
+    <div class="app-card">  
+      <img src="https://via.placeholder.com/80" alt="App Icon">  
+      <h3>NextToppers</h3>  
+      <div class="rating">⭐⭐⭐⭐☆</div>  
+      <p>Best app for students to learn and share resources.</p>  
+      <a href="NextToppers_v14.21.6-TheMadXABhi.apk" class="download-btn">Download</a>  
+    </div>  <!-- Example App 2 -->  
+<div class="app-card">  
+  <img src="https://via.placeholder.com/80" alt="App Icon">  
+  <h3>1DM Downloader</h3>  
+  <div class="rating">⭐⭐⭐⭐⭐</div>  
+  <p>Fastest internet download manager for Android.</p>  
+  <a href="https://play.google.com/store/apps/details?id=idm.internet.download.manager" class="download-btn">Download</a>  
+</div>
+
+  </div>    <script>  
+    function searchApps() {  
+      let input = document.getElementById('searchInput').value.toLowerCase();  
+      let cards = document.getElementsByClassName('app-card');  
+      for (let card of cards) {  
+        let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();  
+        if (title.includes(input)) {  
+          card.style.display = 'block';  
+        } else {  
+          card.style.display = 'none';  
+        }  
+      }  
+    }  
+  </script>  </body>  
+</html>
